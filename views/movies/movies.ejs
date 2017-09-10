@@ -2,7 +2,7 @@
 
   <% movies.forEach((movies) => { %>
     <p><%= movies.title  %> - <%= movies.genre %> - <%= movies.plot %></p>
-    <a href="movies/<%= movies._id%>">Go to Edit</a>
+    <a href="movies/update/<%= movies._id%>">Go to Edit</a>
     <a href="movies/delete/<%= movies._id %>">Delete movie</a>
   <% }) %>
 

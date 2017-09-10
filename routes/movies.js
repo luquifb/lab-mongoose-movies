@@ -41,12 +41,11 @@ router.post('/update/:id', (req, res, next) => {
   }
   Movies.findByIdAndUpdate(req.params.id , update)
     .then(result => res.render('index.ejs'))
-    .catch(err => console.log ("Error in creating movie"))
+    .catch(err => console.log ("Error in editing movie"))
 });
 
 // Delete Movies
 router.get('/delete/:id', (req, res, next) => {
-  console.log("Voy a borrar");
   Movies.findByIdAndRemove(req.params.id)
     .then( result =>  res.redirect('/movies'))
     .reject( err => console.log(err));

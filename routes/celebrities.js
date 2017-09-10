@@ -27,7 +27,7 @@ router.post('/new',(req,res,next) =>{
 });
 
 //Edit celebrities
-router.get('/:id', (req,res, next) => {
+router.get('/update/:id', (req,res, next) => {
   Celebrities.findById(req.params.id)
     .then(result => res.render('celebrities/update.ejs', {celebrity:result}))
     .reject (err => console.log(err));
@@ -41,12 +41,11 @@ router.post('/update/:id', (req, res, next) => {
   }
   Celebrities.findByIdAndUpdate(req.params.id , update)
     .then(result => res.render('index.ejs'))
-    .catch(err => console.log ("Error in creating celebrity"))
+    .catch(err => console.log ("Error in editing celebrity"))
 });
 
 // Delete celebrities
 router.get('/delete/:id', (req, res, next) => {
-  console.log("Voy a borrar");
   Celebrities.findByIdAndRemove(req.params.id)
     .then( result =>  res.redirect('/celebrities'))
     .reject( err => console.log(err));

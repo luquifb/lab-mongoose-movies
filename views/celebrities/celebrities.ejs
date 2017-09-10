@@ -2,7 +2,7 @@
 
   <% celebrities.forEach((celebrities) => { %>
     <p><%= celebrities.name  %> - <%= celebrities.occupation %> - <%= celebrities.catchPhrase %></p>
-    <a href="celebrities/<%= celebrities._id%>">Go to Edit</a>
+    <a href="celebrities/update/<%= celebrities._id%>">Go to Edit</a>
     <a href="celebrities/delete/<%=celebrities._id %>">Delete celebrity</a>
   <% }) %>
 
